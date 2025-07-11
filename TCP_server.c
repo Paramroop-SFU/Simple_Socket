@@ -10,9 +10,10 @@
 #include <arpa/inet.h>
 
 void sendTCP(){
+
     int userport = 53333;
     int dest = socket(AF_INET, SOCK_STREAM, 0);
-    char hostname[] = {"142.58.10.205"};
+    char hostname[] = {"Mac.lan"};
     char string_num[10];
     sprintf(string_num, "%d", userport);
     char data[] = {"Hello TCP\n"};
@@ -38,7 +39,7 @@ printf("Server ready and listening on port 53333\n");
 
     printf("Server ready\n");
 
-    int client_accept = accept(dest,(struct sockaddr*)&client_addr, &addr_len);
+int client_accept = accept(dest,(struct sockaddr*)&client_addr, &addr_len);
 if (client_accept < 0) {
     perror("accept failed");
     return;

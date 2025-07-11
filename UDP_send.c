@@ -7,14 +7,14 @@
 #include <netinet/in.h>
 #include <pthread.h>
 #include <sys/types.h>
-
+#include <time.h>
 
 void sendinfo(){
 
     //I need hostname,clientport,sending_data,destination
     
 
-    char hostname[] = {"142.58.10.205"};
+    char hostname[] = {"Mac.lan"};
     
    
     
