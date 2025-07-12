@@ -9,7 +9,7 @@
 #include <sys/types.h>
 
 
-void receive(){
+void server(){
     int userport = 53444;
     int dest = socket(AF_INET, SOCK_DGRAM, 0);
     char hostname[] = {"142.58.10.205"};
@@ -48,6 +48,6 @@ void receive(){
 }
 
 int main(){
-    receive();
+    server();
     return 0;
 }

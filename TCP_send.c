@@ -7,7 +7,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <sys/time.h>
-void recieve(){
+void client(){
     struct timeval start, end;
     int port = 53333;
     int dest = socket(AF_INET, SOCK_STREAM, 0);
@@ -15,7 +15,6 @@ void recieve(){
         perror("Socket creation failed");
         return;
     }
-
     struct sockaddr_in servaddr = {0};
     char buffer[300] = {0};
     servaddr.sin_family = AF_INET;
@@ -59,11 +58,9 @@ void recieve(){
         buffer[received] = '\0';  // Null-terminate string
         printf("Received: %s\n", buffer);
     }
-
     close(dest);
 }
-
 int main(){
-    recieve();
+    client();
     return 0; 
 }

@@ -8,12 +8,11 @@
 #include <pthread.h>
 #include <sys/types.h>
 #include <arpa/inet.h>
-
-void sendTCP(){
-
+//TCP_server
+void server(){
     int userport = 53333;
     int dest = socket(AF_INET, SOCK_STREAM, 0);
-    char hostname[] = {"Mac.lan"};
+    char hostname[] = {"207.23.164.108"};
     char string_num[10];
     sprintf(string_num, "%d", userport);
     char data[] = {"Hello TCP\n"};
@@ -52,11 +51,9 @@ printf("Client connected!\n");
     send(client_accept,message,sizeof(message),0);
     close(client_accept);
     close(dest);
-
-
 }
 
 int main(){
-    sendTCP();
+    server();
     return 0;
 }
